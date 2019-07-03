@@ -1,6 +1,6 @@
 {
   "name": "meta-ssh",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "author": "metaory <metaory@gmail.com>",
   "license": "MIT",
