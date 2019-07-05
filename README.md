@@ -2,6 +2,8 @@
 
 ### AWS Bastion host SSH cli
 
+##### install `npm i -g meta-aws-bastion-ssh`
+
 #### this cli will
 
 -   collect aws region and default pemFilePath
