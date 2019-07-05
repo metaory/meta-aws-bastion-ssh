@@ -1,18 +1,22 @@
 {
-  "name": "meta-ssh",
-  "version": "0.0.9",
-  "main": "index.js",
+  "name": "meta-aws-bastion-ssh",
+  "version": "0.0.11",
+  "main": "./bin/index.js",
+  "description": "AWS Bastion ssh cli",
   "author": "metaory <metaory@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metaory/meta-aws-bastion-ssh"
+  },
   "scripts": {
     "start": "node bin"
   },
   "bin": {
-    "meta-ssh": "./bin/index.js"
+    "mssh": "./bin/index.js"
   },
   "dependencies": {
     "aws-sdk": "^2.487.0",
-    "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "enquirer": "^2.3.0"
   },
