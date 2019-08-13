@@ -1,9 +1,9 @@
 const { prompt, Input, BooleanPrompt, } = require('enquirer')
 
 module.exports = class {
-  constructor () { }
+  constructor() {}
 
-  static input (name, msg, initial = '') {
+  static input(name, msg, initial = '') {
     const message = msg || `Enter ${name}`
     return prompt({
       type: 'input',
@@ -13,7 +13,7 @@ module.exports = class {
     })
   }
 
-  static select (list) {
+  static select(list) {
     const longest = list
       .reduce((acc, cur) => cur.name.length > acc ? cur.name.length : acc, 0)
     const choices = list
@@ -24,11 +24,11 @@ module.exports = class {
       name: 'instance',
       message: 'Select an Instance',
       limit: 10,
-      suggest (input, choices) {
+      suggest(input, choices) {
         return choices.filter(choice => choice.message.includes(input))
       },
       choices,
-      result (value) {
+      result(value) {
         const values = value.split(':')
         const name = values[0].trim()
         const instanceId = values[1]
@@ -37,7 +37,7 @@ module.exports = class {
     })
   }
 
-  static aws () {
+  static aws() {
     const input = (name, message, initial) => {
       return prompt => {
         let p = new Input({ name, message, initial, })
@@ -56,7 +56,7 @@ module.exports = class {
     })
   }
 
-  static confirm (message = 'Are you sure?', initial = true) {
+  static confirm(message = 'Are you sure?', initial = true) {
     return new BooleanPrompt({
       name: 'confirm',
       message,

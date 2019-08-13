@@ -9,18 +9,18 @@ const CONFIG_PATH = resolve(CONFIG_DIR, 'config.json')
 const { log, } = console
 
 module.exports = class {
-  constructor () {
+  constructor() {
     this.values = null
   }
 
-  async init () {
+  async init() {
     log('No Config Found!')
     if (!FS.exists(CONFIG_DIR)) FS.mkdir(CONFIG_DIR)
     FS.writeJson(CONFIG_PATH, {})
     await this.collect()
   }
 
-  async load () {
+  async load() {
     try {
       this.values = require(CONFIG_PATH)
       if (!Object.values(this.values).length) throw new Error()
@@ -29,7 +29,7 @@ module.exports = class {
     }
   }
 
-  async collect () {
+  async collect() {
     // const awsCredentials = await this.prompt.aws()
     const pemFilePath = await Prompt.input('pemFilePath')
     // const roleName = await Prompt.input('roleName')

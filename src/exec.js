@@ -1,13 +1,13 @@
 const { execSync, spawn, } = require('child_process')
 
 module.exports = class {
-  constructor () { }
+  constructor() {}
 
-  static run (cmd) {
+  static run(cmd) {
     return execSync(cmd, { encoding: 'utf8', })
   }
 
-  static connect ({ pemFilePath, user, privateIpAddress, }) {
+  static connect({ pemFilePath, user, privateIpAddress, }) {
     return new Promise((resolve, reject) => {
       const ps = spawn('ssh', [`-i`, `${pemFilePath}`, `${user}@${privateIpAddress}`, ], {
         stdio: [process.stdin, process.stdout, process.stderr, ],
